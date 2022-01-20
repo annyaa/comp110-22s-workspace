@@ -1,4 +1,4 @@
-"""An example of conditional (if-else statements"""
+"""An example of conditional (if-else statements."""
 
 SECRET: int = 3
 
@@ -7,5 +7,11 @@ guess: int = int(input("What is your guess? "))
 
 if guess == SECRET:
     print("You guessed correctly!!!")
+else:
+    print("Sorry, you guessed incorrectly")
+    if guess > SECRET:
+        print("You guessed too high!")
+    else:
+        print("You guessed too low!")
 
 print("Game over.")

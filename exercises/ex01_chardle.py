@@ -21,3 +21,12 @@ if character_selection == word_selection[3]:
     print(character_selection + " found at index 3")
 if character_selection == word_selection[4]:
     print(character_selection + " found at index 4")
+character_match = word_selection.count(character_selection)
+if character_match == 1:
+    print("1 instance of " + character_selection + " found in " + word_selection)
+else:
+    if character_match == 2:
+        print("2 instances of " + character_selection + " found in " + word_selection)
+    else:
+        if character_match == 0:
+            print("No instances of " + character_selection + " found in " + word_selection)

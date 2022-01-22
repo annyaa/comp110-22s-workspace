@@ -25,8 +25,8 @@ character_match = word_selection.count(character_selection)
 if character_match == 1:
     print("1 instance of " + character_selection + " found in " + word_selection)
 else:
-    if character_match == 2:
-        print("2 instances of " + character_selection + " found in " + word_selection)
+    if character_match > 1:
+        print(str(character_match) + " instances of " + character_selection + " found in " + word_selection)
     else:
         if character_match == 0:
             print("No instances of " + character_selection + " found in " + word_selection)

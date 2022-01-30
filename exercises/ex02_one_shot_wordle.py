@@ -4,10 +4,10 @@ __author__ = "730478408"
 
 secret: str = "python"
 
-guess: str = input("What is your 6-letter guess? ")
+guess: str = input(f"What is your {len(secret)}-letter guess? ")
 
 while len(guess) != len(secret):
-    guess = input("That was not 6 letters! Try again: ")
+    guess = input(f"That was not {len(secret)} letters! Try again: ")
 if guess == secret:
     print("Woo! You got it!")
 else:

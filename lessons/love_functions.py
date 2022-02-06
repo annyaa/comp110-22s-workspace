@@ -1,4 +1,4 @@
-"""Some example of teneder, loving function definitions."""
+"""Some example of tender, loving function definitions."""
 
 
 def love(name: str) -> str:

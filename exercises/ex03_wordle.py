@@ -38,33 +38,32 @@ def emojified(user_guess: str, secret_word: str) -> str:
 
 def input_guess(expected_character_length: int) -> str:
     """Given an integer value as a parameter continually prompts the user for input until input length equals integer value entered."""
-    word_guess: str = input(f"Enter a {expected_character_length}-character word: ")
+    word_guess: str = input(f"Enter a {expected_character_length} character word: ")
     while len(word_guess) != expected_character_length:
-        word_guess = input(f"That was not {expected_character_length} letters! Try again: ")
+        word_guess = input(f"That wasn't {expected_character_length} chars! Try again: ")
     return word_guess
 
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     # Your code will go here
-    print("main()")
     secret_word: str = "codes"
     i: int = 0
     turns: int = 6
-    while i < turns:
+    track_progress: bool = False
+    while i < turns and not track_progress:
         print(f"=== Turn {i + 1}/{turns} ===")
-        user_guess = input_guess(len(secret_word))
-        emoji_result = (emojified(user_guess, secret_word))
+        user_guess: str = input_guess(len(secret_word))
+        emoji_result: str = (emojified(user_guess, secret_word))
         print(emoji_result)
         i += 1
-        if user_guess == secret_word and i <= 6:
-            print(f"You won in {i}/6 turns!")
-            exit()
-        else:
-            if user_guess != secret_word and i == 6:
-                print("X/6 - Sorry, try again tomorrow!")
-                exit()
-        
+        if user_guess == secret_word:
+            track_progress = True
+    if track_progress:
+        print(f"You won in {i}/6 turns!")
+    else:
+        print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()

@@ -11,22 +11,27 @@ if len(character_selection) != 1:
     print("Error: Character must be a single character.")
     exit()
 print("Searching for " + character_selection + " in " + word_selection)
+count: int = 0
 if character_selection == word_selection[0]:
     print(character_selection + " found at index 0")
+    count += 1
 if character_selection == word_selection[1]:
     print(character_selection + " found at index 1")
+    count += 1
 if character_selection == word_selection[2]:
     print(character_selection + " found at index 2")
+    count += 1
 if character_selection == word_selection[3]:
     print(character_selection + " found at index 3")
+    count += 1
 if character_selection == word_selection[4]:
     print(character_selection + " found at index 4")
-character_match = word_selection.count(character_selection)
-if character_match == 1:
+    count += 1
+if count == 1:
     print("1 instance of " + character_selection + " found in " + word_selection)
 else:
-    if character_match > 1:
-        print(str(character_match) + " instances of " + character_selection + " found in " + word_selection)
+    if count > 1:
+        print(str(count) + " instances of " + character_selection + " found in " + word_selection)
     else:
-        if character_match == 0:
+        if count == 0:
             print("No instances of " + character_selection + " found in " + word_selection)

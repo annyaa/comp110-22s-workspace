@@ -50,16 +50,16 @@ def main() -> None:
     secret_word: str = "codes"
     i: int = 0
     turns: int = 6
-    track_progress: bool = False
-    while i < turns and not track_progress:
+    win: bool = False
+    while i < turns and not win:
         print(f"=== Turn {i + 1}/{turns} ===")
         user_guess: str = input_guess(len(secret_word))
         emoji_result: str = (emojified(user_guess, secret_word))
         print(emoji_result)
         i += 1
         if user_guess == secret_word:
-            track_progress = True
-    if track_progress:
+            win = True
+    if win:
         print(f"You won in {i}/6 turns!")
     else:
         print("X/6 - Sorry, try again tomorrow!")

@@ -114,11 +114,7 @@ def draw_half_cloud(cloud_turtle: Turtle, cloud_x: float, cloud_y: float, cloud_
     cloud_turtle.begin_fill()
     cloud_turtle.circle(cloud_radius)
     cloud_turtle.end_fill()
-    # 1stcloud_turtle.goto(200, 200)
-    # 1stcloud_turtle.circle(25)
-    # cloud_turtle.goto(220, 240)
-    # cloud_turtle.circle(25)
-
+    
 
 def main() -> None:
     """The entrypoint of my scene."""

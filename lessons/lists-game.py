@@ -48,4 +48,4 @@ sum: int = 0
 while i < len(rolls):
     sum = sum + rolls[i]
 i = i + 1
-print(f"total")
+print(f"Total: {sum}")

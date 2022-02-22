@@ -3,9 +3,10 @@
 
 from lessons.sum import sum
 
+
 def test_sum_empty() -> None:
     xs: list[float] = []
-    assert sum([]) == 0.0
+    assert sum(xs) == 0.0
 
 
 def test_sum_single_item() -> None:

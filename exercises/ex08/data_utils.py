@@ -90,3 +90,22 @@ def count(values_list: list[str]) -> dict[str, int]:
         else:
             count_result[item] = 1
     return count_result
+
+
+def filter_analysis(table_input: list[dict[str, str]], column: str, response_to_tally: str) -> dict[str, int]:
+    """Split respondents into comp sci and non comp sci majors and further filter them by value."""
+    major_responses: list[str] = []
+    major_count: int = 0
+    non_major_count: int = 0
+    filter_majors: dict[str, int] = {}
+    for row in table_input:
+        item: str = row[column]
+        major_responses.append(item)
+    for response in major_responses:
+        if response == response_to_tally:
+            non_major_count += 1
+        else:
+            major_count += 1
+    filter_majors["non comp sci major"] = non_major_count
+    filter_majors["comp sci major"] = major_count
+    return filter_majors

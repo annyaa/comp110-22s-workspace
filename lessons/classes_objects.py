@@ -35,8 +35,3 @@ print(Pizza)
 print(a_pizza)
 print(a_pizza.size)
 print(f"Price: ${price(a_pizza)}")
-
-class Point:
-
-    a: Point = Point(1, -1)
-    a.invert()

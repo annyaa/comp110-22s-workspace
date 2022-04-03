@@ -109,3 +109,22 @@ def filter_analysis(table_input: list[dict[str, str]], column: str, response_to_
     filter_majors["non comp sci major"] = non_major_count
     filter_majors["comp sci major"] = major_count
     return filter_majors
+
+
+def general_value_scores(table_input: list[dict[str, str]], column: str, response_to_tally: str) -> dict[str, int]:
+    """Split respondents into comp sci and non comp sci majors and further filter them by value."""
+    value_scores: list[str] = []
+    highest_value_count: int = 0
+    need_to_improve_count: int = 0
+    filter_majors: dict[str, int] = {}
+    for row in table_input:
+        item: str = row[column]
+        value_scores.append(item)
+    for response in value_scores:
+        if response == response_to_tally:
+            highest_value_count += 1
+        else:
+            need_to_improve_count += 1
+    filter_majors["Gave the highest rating"] = highest_value_count
+    filter_majors["Indicates a need to improve"] = need_to_improve_count
+    return filter_majors
